@@ -44,9 +44,8 @@ print(f"Precision: {precision:.4f}")
 print(f"Recall: {recall:.4f}")
 print(f"F1 Score: {f1:.4f}")
 
-# Optional: Test the model with different values of k
-# for k in range(1, 11):
-#     knn = KNeighborsClassifier(n_neighbors=k)
-#     knn.fit(X_train, y_train)
-#     y_pred = knn.predict(X_test)
-#     print(f"k={k}, Accuracy: {accuracy_score(y_test, y_pred):.4f}")
+for k in range(1, 11):
+knn = KNeighborsClassifier(n_neighbors=k)
+knn.fit(X_train, y_train)
+y_pred = knn.predict(X_test)
+print(f"k={k}, Accuracy: {accuracy_score(y_test, y_pred):.4f}")
